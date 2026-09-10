@@ -1,0 +1,74 @@
+.selection-stages {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.stage-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.stage-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.stage-number {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.03em;
+}
+
+.stage-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 6px;
+}
+
+.stage-description {
+  font-size: 12.5px;
+  color: var(--color-text-secondary);
+  line-height: 1.55;
+  margin-bottom: 12px;
+}
+
+.stage-card .stage-window {
+  margin-bottom: 14px;
+}
+
+.stage-checklist {
+  flex: 1;
+  margin-bottom: 18px;
+}
+
+.stage-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--color-text);
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.stage-checklist li svg {
+  color: var(--color-success);
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .selection-stages {
+    grid-template-columns: 1fr;
+  }
+}
