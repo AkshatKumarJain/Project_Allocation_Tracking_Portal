@@ -3,18 +3,21 @@ import "dotenv/config"
 import { connectDB } from "./config/db";
 import { errorHandler } from "./middlewares/errorHandler";
 import userRouter from "./modules/users/user.route";
+import {connectRedis, disconnectRedis} from "./config/redis";
 
 const app = express();
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
+connectRedis();
+
+connectDB();
+
+app.get("/health", (req, res) => {
     res.json({
         message: "Server is running"
     });
 });
-
-connectDB();
 
 const PORT = process.env.PORT || 8000;
 
@@ -27,3 +30,8 @@ app.use(errorHandler);
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+
+process.on("SIGINT", async () => {
+    await disconnectRedis();
+    process.exit(1);
+})
