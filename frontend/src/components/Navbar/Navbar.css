@@ -46,3 +46,31 @@
     gap: 10px;
   }
 }
+.navbar-profile {
+  margin-left: auto;
+}
+
+.profile-button {
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background-color: #0F2554;
+  color: #ffffff;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.profile-button:hover {
+  background-color: #091a3d;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
